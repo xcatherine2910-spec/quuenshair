@@ -12,7 +12,7 @@ export default function Home() {
             {/* Center: brand */}
             <div className="flex items-center justify-center">
               <div className="text-center leading-tight">
-                <div className="text-3xl font-semibold text-accent">Queen's Hair</div>
+                <div className="text-3xl font-semibold text-accent">Queen&apos;s Hair</div>
                 <div className="text-[11px] tracking-[0.35em] text-primary uppercase">Hair salon</div>
               </div>
             </div>
@@ -39,7 +39,7 @@ export default function Home() {
           <div className="absolute inset-0">
             <Image
               src="/hero.jpg"
-              alt="Queen's Hair hero"
+              alt="Queen&apos;s Hair hero"
               fill
               priority
               sizes="100vw"
@@ -71,7 +71,7 @@ export default function Home() {
             <p className="font-display text-3xl md:text-4xl text-accent leading-snug italic">
               „Tvá koruna krásy, tvé nové sebevědomí.“
             </p>
-            <footer className="mt-4 text-accent/60 tracking-widest text-xs">QUEEN'S HAIR</footer>
+            <footer className="mt-4 text-accent/60 tracking-widest text-xs">QUEEN&apos;S HAIR</footer>
           </blockquote>
         </div>
       </section>
@@ -152,7 +152,7 @@ export default function Home() {
               <a href="https://instagram.com/queenshair" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="group">
                 <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF] text-white flex items-center justify-center shadow-lg shadow-black/20 group-hover:scale-105 transition-transform">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 md:w-8 md:h-8">
-                    <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 2.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm5.25-.75a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Z"/>
+                    <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 2.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"/>
                   </svg>
                 </div>
               </a>
@@ -295,7 +295,7 @@ export default function Home() {
       <footer className="bg-black text-accent py-8 border-t border-dark-lighter/60 animate-fade-in" style={{animationDelay:'400ms'}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h3 className="font-display text-2xl font-semibold text-accent mb-2">Queen's Hair</h3>
+            <h3 className="font-display text-2xl font-semibold text-accent mb-2">Queen&apos;s Hair</h3>
             <p className="text-accent/70 mb-4">„Tvá koruna krásy, tvé nové sebevědomí.“</p>
             <div className="flex justify-center gap-6">
               <a href="https://facebook.com/queenshair" className="text-accent/70 hover:text-accent transition">Facebook</a>
