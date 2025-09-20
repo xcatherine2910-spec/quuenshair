@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display), serif;
+  }
+  /* Fade animations */
+  .animate-fade-in {
+    animation: fade-in 700ms ease-out both;
+  }
+  .animate-fade-up {
+    animation: fade-up 800ms ease-out both;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-secondary to-primary text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-primary/20 transition-all;
+  }
+  
+  .btn-secondary {
+    @apply border border-primary text-accent px-6 py-3 rounded-full font-semibold hover:bg-primary hover:text-dark transition-colors;
+  }
+}
