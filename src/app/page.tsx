@@ -91,7 +91,7 @@ export default function Home() {
                 <Image src="/61mD6mBXL-L.jpg" alt="Detail" fill className="object-cover" sizes="(min-width: 768px) 25vw, 50vw" />
               </div>
               <div className="relative aspect-square overflow-hidden rounded-md">
-                <Image src="https://images.unsplash.com/photo-1520975940461-3e27f2755f05?w=800&q=80" alt="Portrait" fill className="object-cover" sizes="(min-width: 768px) 25vw, 50vw" />
+                <Image src="/todle.jpg" alt="Portrait" fill className="object-cover" sizes="(min-width: 768px) 25vw, 50vw" />
               </div>
             </div>
             {/* Right copy */}
