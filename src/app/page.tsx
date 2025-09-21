@@ -1,6 +1,23 @@
+'use client'
+
 import Image from 'next/image'
+import { useState, useEffect } from 'react'
 
 export default function Home() {
+  const [modalOpen, setModalOpen] = useState(false)
+  const [currentImage, setCurrentImage] = useState('')
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && modalOpen) {
+        setModalOpen(false)
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [modalOpen])
+
   return (
     <div className="min-h-screen bg-dark animate-fade-in">
       {/* Header */}
@@ -124,12 +141,24 @@ export default function Home() {
               { before: '/IMG_0937.png', after: '/IMG_1300.jpg' },
             ].map((pair, i) => (
               <div key={i} className="bg-dark-lighter/40 border border-dark-lighter rounded-lg overflow-hidden">
-                <div className="relative aspect-[4/3]">
-                  <Image src={pair.before} alt={`Před ${i+1}`} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
+                <div 
+                  className="relative aspect-[4/3] cursor-pointer hover:scale-105 transition-transform duration-300"
+                  onClick={() => {
+                    setCurrentImage(pair.before)
+                    setModalOpen(true)
+                  }}
+                >
+                  <Image src={pair.before} alt={`Před ${i+1}`} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover hover:brightness-110 transition-all duration-300" />
                   <span className="absolute top-2 left-2 bg-black/70 text-accent text-xs tracking-wider px-2 py-1">PŘED</span>
                 </div>
-                <div className="relative aspect-[4/3] border-t border-dark-lighter">
-                  <Image src={pair.after} alt={`Po ${i+1}`} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
+                <div 
+                  className="relative aspect-[4/3] border-t border-dark-lighter cursor-pointer hover:scale-105 transition-transform duration-300"
+                  onClick={() => {
+                    setCurrentImage(pair.after)
+                    setModalOpen(true)
+                  }}
+                >
+                  <Image src={pair.after} alt={`Po ${i+1}`} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover hover:brightness-110 transition-all duration-300" />
                   <span className="absolute top-2 left-2 bg-black/70 text-accent text-xs tracking-wider px-2 py-1">PO</span>
                 </div>
               </div>
@@ -305,6 +334,34 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Image Modal */}
+      {modalOpen && (
+        <div 
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+          onClick={() => setModalOpen(false)}
+        >
+          <div className="relative max-w-4xl max-h-full">
+            <button
+              className="absolute top-4 right-4 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold transition-colors"
+              onClick={(e) => {
+                e.stopPropagation()
+                setModalOpen(false)
+              }}
+            >
+              ×
+            </button>
+            <Image
+              src={currentImage}
+              alt="Full size image"
+              width={800}
+              height={600}
+              className="max-w-full max-h-full object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        </div>
+      )}
     </div>
   )
 }
